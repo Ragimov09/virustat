@@ -1,31 +1,31 @@
-const baseUrl = '';
+const baseUrl = 'https://ms-authentication-test.herokuapp.com';
 
 const loginForm = document.querySelector('#login-form');
 loginForm.addEventListener('submit', sendLoginFormData);
 
 function sendLoginFormData(e) {
 	e.preventDefault();
-	const username = document.querySelector('#login-username').value;
+	const email = document.querySelector('#login-email').value;
 	const password = document.querySelector('#login-password').value;
 
 	const formData = {
-		username: username,
+		email: email,
 		password: password
 	};
 
 	const data = JSON.stringify(formData);
 
-	fetch(`${baseUrl}`, {
+	axios({
 		method: 'POST',
-		body: data,
-		headers: {
-			'Content-Type': 'application/json'
-		}
+		url: 'https://ms-authentication-test.herokuapp.com/auth/sign-in',
+		headers: { 'Content-Type': 'application/json' },
+		data: data
 	})
-		.then((res) => res.json())
 		.then((response) => {
-			const token = response.token;
+			console.log(response);
+			const token = response.data.token;
 			localStorage.setItem('token', token);
+			window.location.assign('http://127.0.0.1:5500/hospitals.html');
 		})
 		.catch((err) => console.log(err));
 }

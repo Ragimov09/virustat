@@ -33,16 +33,14 @@
 
 
     <div class="overlay"></div>
-	<div class="login-modal">
+	<div class="mymodal">
 		<div class="modal-content">
-			<div class="login active">
 				<form id="login-form" class="modal-form">
 					<img src="img/logo.png">
-					<input id="login-username" type="text" placeholder="Email" required>
+					<input id="login-email" type="email" placeholder="Email" required>
 					<input id="login-password" type="password" placeholder="Password" required>
-					<button class="btn_2 d-none d-lg-block" type="submit">Login</button>
+					<button class="btn_2 d-lg-block" type="submit">Login</button>
 				</form>
-			</div>
 		</div>
 	   
 	</div>
@@ -99,7 +97,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <a class="btn_2 d-none d-lg-block open-modal-btn" href="#">Login</a>
+                        <a class="btn_2 d-lg-block open-modal-btn" href="#">Login</a>
                     </nav>
                 </div>
             </div>
@@ -609,6 +607,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/custom.js"></script>
 
     <script src="js/animationmodal.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="js/login.js"></script>
 </body>
 

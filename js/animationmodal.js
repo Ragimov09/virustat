@@ -1,12 +1,13 @@
-const login = document.querySelector('.login');
-const openModalBtn = document.querySelector('.open-modal-btn');
+const openModalBtn = document.querySelectorAll('.open-modal-btn');
 const overlay = document.querySelector('.overlay');
-const modal = document.querySelector('.login-modal');
+const modal = document.querySelector('.mymodal');
 
-openModalBtn.addEventListener('click', function(e) {
-	modal.classList.add('open-modal');
-	overlay.classList.add('open-overlay');
-});
+openModalBtn.forEach((el) =>
+	el.addEventListener('click', function(e) {
+		modal.classList.add('open-modal');
+		overlay.classList.add('open-overlay');
+	})
+);
 
 overlay.addEventListener('click', function() {
 	modal.classList.remove('open-modal');
